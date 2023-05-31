@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: 25pt Arial normal;
+            background-color: gray;
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            text-shadow: 0px 3px 8px rgba(0, 0, 0, 0.7);
+            padding: 20px;
+        }
+        input {
+            border: 3px solid white;
+            color: white;
+            background-color: gray;
+            width: 250px;
+            height: 120px;
+            font: 18pt Arial normal;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.7);
+            text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        input:hover {
+            color: black;
+            background-color: white;
+            cursor: pointer;
+            transition: 200ms ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Antes e Depois</h1>
+    <div id="centro">
+        <input type="button" value="Antecessor e Sucessor" onclick="pegarValores()">
+    </div>
+
+    <script>
+        function pegarValores() {
+        var valor = prompt("Digite um número inteiro qualquer")
+        var antecessor = Number(valor) - 1
+        var sucessor = Number(valor) + 1
+
+        var mensagem = "Antes de " + valor + ", temos o número " + antecessor + ".\n" + "Depois de " + valor + ", temos o número " + sucessor + "."
+
+        window.alert(mensagem)
+
+        }
+
+    </script>
+</body>
+</html>
