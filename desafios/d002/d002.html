@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #f0f0f0;
+            font: 25pt Arial normal;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+        div#centro {
+            display: flex;
+            justify-content: center;
+        }
+        div#centro > input {
+            width: 250px;
+            height: 120px;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 18pt;
+            border-radius: 50%;
+            box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.7);
+            background-color: gray;
+            border: 3px solid black;
+            color: white;
+            text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.6
+            );
+        }
+        div#centro > input:hover {
+            cursor: pointer;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <h1>Boas-Vindas</h1>
+    <div id="centro">
+        <input type="text" value="Inicie o Desafio" onclick="obterValores()">
+    </div>
+    
+    <script>
+        function obterValores() {
+            var nome = prompt("Digite seu nome:")
+            var idade = prompt("Digite sua idade:");
+
+            var mensagem = "Acabamos de conhecer " + nome + ", que tem " + idade + " anos de idade e tivemos o privilégio de ter sua visita em nosso Website.";
+            alert(mensagem);
+        }
+    </script>
+
+</body>
+</html>
