@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 5</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-color: #00E8E8;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 35pt; 
+            padding: 20px;
+            text-shadow: 0px 3px 8px rgba(0, 0, 0, 0.6);
+        }
+        div#btnconversor {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        div#btnconversor > input {
+            font-size: 25pt;
+            font-weight: bolder;
+            width: 250px;
+            height: 120px;
+            border-radius: 40px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6);;
+        }
+
+        div#btnconversor > input:hover{
+            cursor: pointer;
+            background-color: #004242;
+            color: white;
+            text-shadow: 0px 2px 6px #00e8e8c7;
+        }
+
+        div#resultado{
+            color: #5C0946;
+            font-size: 20pt;
+            text-align: center;
+            padding: 10px;
+            text-shadow: 0px 3px 8px rgba(0, 0, 0, 0.6);
+            line-height: 2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <div id="btnconversor"><input type="button" value="Conversor" onclick="converterMetros()"></div>
+    <div id="resultado">Clique no botão acima para Iniciar a Conversão...</div>
+
+    <script>
+        function converterMetros() {
+            var metros = prompt(`Digite a distância em Metros (m).`)
+
+            while (metros == null || metros == "") {
+                window.alert("Digite um valor válido!")
+                metros = prompt(`Digite a distância em Metros (m).`)
+            }
+
+            var quilometros = metros / 1000;
+            var hectometros = metros / 100;
+            var decametros = metros / 10;
+            var decimetros = metros * 10;
+            var centimetros = metros * 100;
+            var milimetros = metros * 1000;
+            var resultado = document.getElementById("resultado");
+
+            resultado.style.color = '#E817B0'
+            resultado.innerHTML = (`<p><strong>A distância de ${metros} metros, corresponde a...</strong><br>
+${quilometros.toFixed(3)} quilometros (km)<br>
+${hectometros.toFixed(3) } hectômetros (Hm)<br>
+${decametros.toFixed(3) } decâmetros (Dam)<br>
+${decimetros.toLocaleString('pt-BR')} decímetros (dm)<br>
+${centimetros.toLocaleString('pt-BR')} centímetros (cm)<br>
+${milimetros.toLocaleString('pt-BR')} milímetros(mm)</p>`)
+        }
+
+
+    </script>
+    </body>
+</html>
