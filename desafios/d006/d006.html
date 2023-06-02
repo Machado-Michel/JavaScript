@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 6</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-color: aliceblue;
+        }
+        body > h1 {
+            text-align: center;
+            font-size: 35pt;
+            text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
+            padding: 30px;
+
+            background-image: linear-gradient(to right, rgb(0, 162, 255), rgb(255, 145, 0), rgb(255, 217, 0));
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        div#btn{
+            display: flex;
+            justify-content: center;
+            padding-bottom: 30px;
+        }
+        div#btn > input {
+            background-color: darkblue;
+            color: white;
+            font-size: 30pt;
+            font-weight: bolder;
+            width: 300px;
+            height: 120px;
+            border-radius: 40px;
+            text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.6);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.8);
+        }
+        div#btn > input:hover{
+            cursor: pointer;
+            background-color: white;
+            color: black;
+        }
+
+        div#info{
+            font-weight: bold;
+            text-align: center;
+            padding-top: 20px;
+            font-size: 30pt;
+        }
+
+        div#temp{
+            text-align: center;
+            font-size: 28pt;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <div id="btn"><input type="button" value="Converter" onclick="conversor()"></div>
+    <div id="info">Clique no botão acima para iniciar a conversão...</div>
+    <div id="temp"></div>
+    
+    <script defer>
+        function conversor() {
+            while (true) {
+                var tempCelsius = prompt("Digite o valor em graus Celsius:");
+
+                if (tempCelsius === null) {
+                    return; // Retorna imediatamente se o botão "cancelar" for pressionado
+                }
+
+                tempCelsius = parseFloat(tempCelsius);
+
+                if (!isNaN(tempCelsius) && tempCelsius !== "") {
+                    break; // Sai do loop se o valor for válido
+                }
+
+                alert("Digite um valor válido!");
+            }
+
+            var celsius = tempCelsius;
+            var fahrenheit = (celsius * 9) / 5 + 32;
+            var kelvin = celsius + 273.15;
+
+            var resultado = document.querySelector("#info");
+            var temperatura = document.querySelector("#temp");
+
+            resultado.innerHTML = `A temperatura de ${tempCelsius}ºC corresponde a...`;
+
+            temperatura.innerHTML = `<p><strong>${kelvin.toFixed(2)}ºK</strong> - (Kelvin)</p>
+            <p><strong>${fahrenheit.toFixed(2)}ºF</strong> - (Fahrenheit)</p>`;
+        }
+    </script>
+
+
+
+
+</body>
+</html>
