@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Rastreio de Cursor</title>
+    <style>
+
+        body {
+            
+    background-image: url(space-3562639.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .cursor-tracker {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            width: 150px;
+            height: 150px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .25s;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="cursor-tracker">
+        <svg xmlns="http://www.w3.org/2000/svg" class="svg" height="4em"
+            viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <style>
+            svg {
+            fill: #ffffff  
+                }
+            </style>
+            <path
+                d="M420.55,301.93a24,24,0,1,1,24-24,24,24,0,0,1-24,24m-265.1,0a24,24,0,1,1,24-24,24,24,0,0,1-24,24m273.7-144.48,47.94-83a10,10,0,1,0-17.27-10h0l-48.54,84.07a301.25,301.25,0,0,0-246.56,0L116.18,64.45a10,10,0,1,0-17.27,10h0l47.94,83C64.53,202.22,8.24,285.55,0,384H576c-8.24-98.45-64.54-181.78-146.85-226.55" />
+        </svg>
+    </div>
+    <script>
+        const tracker = document.querySelector('.cursor-tracker')
+        const trackerSize = tracker.offsetWidth
+        let trackerX = 0
+        let trackerY = 0
+        let mouseX = 0
+        let mouseY = 0
+        const speed = 0.05
+        let isVisible = false
+
+        document.addEventListener('mousemove', e => {
+            if (!isVisible) {
+                isVisible = true
+                tracker.style.opacity = 1
+                updatePosition()
+            }
+            mouseX = e.clientX
+            mouseY = e.clientY
+        })
+
+        const updatePosition = () => {
+            const distanceX = mouseX - (trackerX + trackerSize / 2)
+            const distanceY = mouseY - (trackerY + trackerSize / 2)
+
+            trackerX += distanceX * speed
+            trackerY += distanceY * speed
+
+            tracker.style.transform = `translate(${trackerX}px, ${trackerY}px)`
+
+            requestAnimationFrame(updatePosition)
+        }
+
+    </script>
+</body>
+</html>
