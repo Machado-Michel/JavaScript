@@ -4,21 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo de Exercicio</title>
+    <title>Exercicio 16</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <header>
-        <h1>Titulo</h1>
+        <h1>Vamos Contar</h1>
     </header>
     <section>
-        <div>
-            Hora Atual: 
+        <div id="contador">
+            <form action="#">
+                <p>
+                    <label for="inicio">Início:</label>
+                    <input type="number" name="inicio" id="inicio">
+                </p>
+                <p>
+                    <label for="fim">Fim:</label>
+                    <input type="number" name="fim" id="fim">
+                </p>
+                <p>
+                    <label for="passo">Passo:</label>
+                    <input type="number" name="passo" id="passo">
+                </p>
+
+                <div class="btn" onclick="contar()">Contar</div>
+            </form>
         </div>
-        <div>
-            Olá...
+        <div id="res">
+            Preparando a contagem...
         </div>
     </section>
+    <div id="reiniciar" onclick="reiniciar()">Reiniciar</div>
     <footer>
         <p>&copy; CodeFlow - 2023</p>
     </footer>
