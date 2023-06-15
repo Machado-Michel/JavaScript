@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo de Exercicio</title>
+    <title>Desafio 10</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <header>
-        <h1>Titulo</h1>
+        <h1>Resolvendo Bhaskara</h1>
     </header>
     <section>
-        <div>
-            Hora Atual: 
+        <div id="calcular" onclick="calcular()">
+            Calcular
         </div>
-        <div>
-            Olá...
+        <div id="titres"></div>
+        <div id="resultado">
+            Considerando uma equação no formato <strong>Ax² + Bx + C = 0</strong>, aperte o botão acima para calcular o valor de <strong>&#916;</strong>.
         </div>
     </section>
-    <div id="reiniciar">Reiniciar</div>
+    <div id="reiniciar" onclick="reiniciar()">Reiniciar</div>
     <footer>
         <p>&copy; CodeFlow - 2023</p>
     </footer>
