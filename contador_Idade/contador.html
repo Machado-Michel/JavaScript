@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Idade</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Contador de Idade</h1>
+    </header>
+    <section>
+        <form>
+        <div class="block">
+            <p class="title">Data</p>
+            <input type="text" name="data" id="data" placeholder="dd" required="required" minlength="1" maxlength="2">
+        </div>
+        <div class="block">
+            <p class="title">Mês</p>
+            <input type="text" name="mes" id="mes" placeholder="mm" required minlength="1" maxlength="2">
+        </div>
+        <div class="block">
+            <p class="title">Ano</p>
+            <input type="text" name="ano" id="ano" placeholder="aaaa" required minlength="4" maxlength="4">
+        </div>
+        <div class="base">
+            <div class="enter">
+                <input type="button" name="calcular" value="Calcular" onclick="age()">
+            </div>
+        </div>
+        <div id="age"></div>
+        </form>
+    </section>
+    <div id="reiniciar" onclick="reiniciar()">Reiniciar</div>
+    <footer>
+        <p>&copy; CodeFlow - 2023</p>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>
