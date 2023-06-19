@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 18</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Analisador de Números</h1>
+    </header>
+    <section>
+        <form>
+            <div>
+                <label for="valor">Número (Entre 1 e 100):</label>
+                <input type="number" name="valor" id="valor" placeholder="Digite um Número" minlength="1" maxlength="3" required>
+                <input type="button" value="Adicionar" id="valorAdicionar" onclick="adicionarNumero()">
+            </div>
+            <select name="adicionado" id="adicionado" size="10"></select>
+            <div><input type="button" value="Finalizar" id="btnFinalizar" onclick="analisar()"></div>
+            <div id="resultado"></div>
+        </form>
+    </section>
+    <div id="reiniciar" onclick="reiniciar()">Reiniciar</div>
+    <footer>
+        <p>&copy; CodeFlow - 2023</p>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>
