@@ -1,0 +1,93 @@
+body {
+    width: 100vw;
+    background: rgb(107, 107, 241);
+    font: 15pt Arial;
+    overflow: hidden;
+}
+
+header {
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 75vw;
+    margin: auto;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.aprovado {
+    color: green;
+    background-color: lightgreen;
+}
+
+.recuperacao {
+    color: orangered;
+    background-color: rgb(255, 194, 81);
+}
+
+.reprovado {
+    color: red;
+    background-color: rgb(255, 180, 180);
+}
+
+div#reiniciar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 15vh;
+}
+
+#reiniciar {
+    font: bold 1em/2em inherit;
+    color: #000;
+    background-color: #f44;
+    width: 9em;
+    height: 2em;
+    border-radius: 30em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+#reiniciar:hover {
+    color: #fff;
+}
+
+#reiniciar::before {
+    content: '';
+    width: 0;
+    height: 2em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #f00 0%, #500d 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+#reiniciar:hover::before {
+    width: 9em;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: -1;
+}
