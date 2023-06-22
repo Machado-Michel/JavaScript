@@ -55,7 +55,7 @@ function avaliar() {
         exibirMensagemSituacao("aprovado");
     } else if (media >= 3) {
         // Recuperação
-        exibirMensagemSituacao("recuperacao");
+        exibirMensagemSituacao("em recuperacao");
     } else {
         // Reprovado
         exibirMensagemSituacao("reprovado");
